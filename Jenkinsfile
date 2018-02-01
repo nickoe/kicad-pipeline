@@ -19,6 +19,7 @@ pipeline {
         dir('build') {
           sh 'cmake ../kicad .'
         }
+      }
     }
     stage('Make') {                               
       steps {      
