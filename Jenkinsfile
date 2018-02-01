@@ -17,7 +17,7 @@ pipeline {
       steps {
         sh 'mkdir build'
         dir('build') {
-          sh 'cmake ../kicad .'
+          sh 'cmake ../kicad '
         }
       }
     }
