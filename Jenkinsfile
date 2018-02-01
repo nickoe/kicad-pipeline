@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('KiCad Checkout') {
             steps {
-              checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/KiCad/kicad-source-mirror.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/KiCad/kicad-source-mirror.git']]])
             }
         }
         stage('Build') {                                                           
@@ -13,6 +13,7 @@ pipeline {
                 sh 'uname -a'  
                 sh 'lsb_release -a'
                 sh 'pwd && ls'
+                sh 'ls /home/jenkins/ws'
                 //sh './linux-kicad-full-gcc-head.sh'
             }                                                                      
         }                                                                          
