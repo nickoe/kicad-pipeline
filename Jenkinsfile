@@ -6,6 +6,7 @@ pipeline {
         stage('KiCad Checkout') {
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/KiCad/kicad-source-mirror.git']]])
+                sh 'pwd && ls'
             }
         }
         stage('Build') {                                                           
