@@ -28,9 +28,18 @@ pipeline {
           sh 'lsb_release -a'
           sh 'pwd && ls'
           sh 'ls /home/jenkins/ws'
+          sh 'make -j4'
           //sh '../linux-kicad-full-gcc-head.sh'
         }
       }                                    
     }                                      
+    stage('Test') {
+      steps {
+        sh 'mkdir build'
+        dir('build') {
+          sh 'echy "Say What?"'
+        }
+      }
+    }
   }                                        
 } 
