@@ -9,7 +9,7 @@ pipeline {
         dir('kicad') {
           checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/KiCad/kicad-source-mirror.git']]])
           sh 'pwd && ls'
-          sh 'ls ..
+          sh 'ls ..'
         }
       }
     }
