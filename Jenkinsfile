@@ -14,7 +14,7 @@ pipeline {
                 sh 'lsb_release -a'
                 sh 'pwd && ls'
                 sh 'ls /home/jenkins/ws'
-                //sh './linux-kicad-full-gcc-head.sh'
+                sh './linux-kicad-full-gcc-head.sh'
             }                                                                      
         }                                                                          
     }                                                                              
