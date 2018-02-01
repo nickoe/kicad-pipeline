@@ -12,6 +12,7 @@ pipeline {
             steps {                                                                
                 sh 'uname -a'  
                 sh 'lsb_release -a'
+                sh 'pwd && ls'
                 sh './linux-kicad-full-gcc-head.sh'
             }                                                                      
         }                                                                          
