@@ -13,14 +13,21 @@ pipeline {
         }
       }
     }
-    stage('Build') {                               
+    stage('Configure') {
+      steps {
+        sh 'mkdir build'
+        dir('build') {
+          sh 'cmake ../kicad .'
+        }
+    }
+    stage('Make') {                               
       steps {      
-        dir('kicad') {
+        dir('build') {
           sh 'uname -a'  
           sh 'lsb_release -a'
           sh 'pwd && ls'
           sh 'ls /home/jenkins/ws'
-          sh '../linux-kicad-full-gcc-head.sh'
+          //sh '../linux-kicad-full-gcc-head.sh'
         }
       }                                    
     }                                      
