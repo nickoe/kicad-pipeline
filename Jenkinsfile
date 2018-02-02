@@ -17,7 +17,7 @@ pipeline {
       steps {
         sh 'mkdir build'
         dir('build') {
-          sh 'cmake ../kicad '
+          sh 'cmake  -DKICAD_SPICE=OFF -DKICAD_USE_OCE=OFF ../kicad '
         }
       }
     }
