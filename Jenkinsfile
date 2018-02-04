@@ -35,7 +35,6 @@ pipeline {
     }                                      
     stage('Test') {
       steps {
-        sh 'mkdir build'
         dir('build') {
           sh 'echy "Say What?"'
         }
