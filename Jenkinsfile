@@ -1,3 +1,5 @@
+#!groovy
+
 pipeline {                                     
   agent {                                    
     label 'docker_ubuntu-16.04_ssh'                                
@@ -36,7 +38,7 @@ pipeline {
     stage('Test') {
       steps {
         dir('build') {
-          sh 'echy "Say What?"'
+          sh 'echo "Say What?"'
         }
       }
     }
